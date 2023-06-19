@@ -13,8 +13,8 @@ const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
 
 ///////////////////////////////////////
-// Modal window
 
+// Modal window
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove('hidden');
@@ -38,39 +38,16 @@ document.addEventListener('keydown', function (e) {
 });
 
 ////////////////////////////////////////////////////////////////////////////
+
 // Button scrolling
 btnScrollTo.addEventListener('click', function (e) {
   const s1coords = section1.getBoundingClientRect();
-
-  // console.log(e.target.getBoundingClientRect());
-
-  // scrolling
-
-  // window.scrollTo(
-  //   s1coords.left + window.pageXOffset,
-  //   s1coords.top + window.pageYOffset + 110
-  // );
-  // window.scrollTo({
-  //   left: s1coords.left + window.pageXOffset,
-  //   top: s1coords.top + window.pageYOffset + 110,
-  //   behavior: 'smooth',
-  // });
-
   section1.scrollIntoView({ behavior: 'smooth' });
 });
 
 ////////////////////////////////////////////////////////////////////////////
+
 // Page navigation
-
-// document.querySelectorAll('.nav__link').forEach(function (el) {
-//   el.addEventListener('click', function (e) {
-//     e.preventDefault();
-//     const id = this.getAttribute('href');
-
-//     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
-//   });
-// });
-
 // 1. Add event listener to common parent element
 // 2. Determine what element originated the event
 document.querySelector('.nav__links').addEventListener('click', function (e) {
@@ -83,7 +60,6 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 });
 
 // Tabe component
-
 tabsContainer.addEventListener('click', function (e) {
   const clicked = e.target.closest('.operations__tab');
 
@@ -122,26 +98,6 @@ nav.addEventListener('mouseover', handlehover.bind(0.5));
 nav.addEventListener('mouseout', handlehover.bind(1));
 
 // Sticky navigation
-// const initialCoords = section1.getBoundingClientRect();
-
-// window.addEventListener('scroll', function () {
-//   if (window.scrollY > initialCoords.top) nav.classList.add('sticky');
-//   else nav.classList.remove('sticky');
-// });
-// const obdsCallback = function (entries, observer) {
-//   entries.forEach(entry => {
-//     console.log(entry);
-//   });
-// };
-
-// const obsOpitions = {
-//   root: null,
-//   threshold: [0, 0.2],
-// };
-
-// const observer = new IntersectionObserver(obdsCallback, obsOpitions);
-// observer.observe(section1);
-
 const header = document.querySelector('.header');
 const navHeight = nav.getBoundingClientRect().height;
 
@@ -282,41 +238,3 @@ const slider = function () {
 slider();
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
-
-// console.log(document.documentElement);
-// console.log(document.body);
-// console.log(document.head);
-
-// const header = document.querySelector('.header');
-// const allSection = document.querySelectorAll('.section');
-
-// console.log(allSection);
-
-// const allId = document.getElementById('section--1');
-// const allButtons = document.getElementsByTagName('button');
-// const allButtonsClass = document.getElementsByClassName('btn');
-
-// creating e inserting elements
-// const message = document.createElement('div');
-// message.classList.add('cookie-message');
-// // messsage.innerText = 'We use cookied for improved functionality and analytics.';
-
-// message.innerHTML =
-//   'We use cookied for improved functionality and analytics. <button class="btn btn--close-cookie">Go it!</button>';
-// console.log(message);
-
-// header.after(message);
-
-// document
-//   .querySelector('.btn--close-cookie')
-//   .addEventListener('click', function () {
-//     // message.remove();
-//     message.parentElement.removeChild(message);
-//   });
-
-// message.style.backgroundColor = '#37384d';
-
-// const h1 = document.querySelector('h1');
-// h1.addEventListener('mouseenter', function (e) {
-//   alert('addEventListener: Great! You are reading the heading :D');
-// });
